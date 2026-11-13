@@ -18,7 +18,7 @@ def print_simple_grid(cell_width, cell_height, data):
         line = "|"
         for cell_data in row:
             cell_padding = cell_width - len(cell_data)
-            line += (cell_data + " " * cell_padding) + "|"
+            line += (cell_data[:cell_width] + " " * cell_padding) + "|"
         print(line)
         for _ in range(1, cell_height):
             print(empty_line(cell_width, num_columns))
@@ -31,7 +31,7 @@ EXAMPLE_2 = 4, 2, [["abcABC", "def"], ["1234", "12"]]
 
 
 if __name__ == "__main__":
-    cell_width, cell_height, data = EXAMPLE_1
+    cell_width, cell_height, data = EXAMPLE_2
     print_simple_grid(cell_width, cell_height, data)
     print()
     # cell_width, cell_height, data = EXAMPLE_2
